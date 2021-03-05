@@ -1,0 +1,17 @@
+{
+  "name": "bj-aqi",
+  "version": "1.0.0",
+  "description": "Get Beijing AQI data.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js -c ../config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JeziL",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "yargs": "^16.2.0"
+  }
+}
