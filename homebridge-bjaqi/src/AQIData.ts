@@ -138,13 +138,13 @@ export class AQIData {
         this.aqi = Math.max.apply(null, iaqi);
         if (this.aqi >= 0 && this.aqi <= 50) {
             this.aqiLevel = 1;
-        } else if (this.aqi >= 0 && this.aqi <= 50) {
-            this.aqiLevel = 2;
         } else if (this.aqi >= 51 && this.aqi <= 100) {
-            this.aqiLevel = 3;
+            this.aqiLevel = 2;
         } else if (this.aqi >= 101 && this.aqi <= 150) {
+            this.aqiLevel = 3;
+        } else if (this.aqi >= 151 && this.aqi <= 300) {
             this.aqiLevel = 4;
-        } else if (this.aqi >= 151 && this.aqi <= 500) {
+        } else if (this.aqi >= 301 && this.aqi <= 500) {
             this.aqiLevel = 5;
         } else {
             this.aqiLevel = 0;
