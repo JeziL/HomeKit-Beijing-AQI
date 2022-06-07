@@ -44,7 +44,7 @@ const updateAQIData = async (config) => {
     let data = {updateTime: Math.floor(Date.now() / 1000)};
     data.aqiList = await getAQIData(config);
     data.weather = await getWeatherData(config);
-    fs.writeFileSync(config.aqi.outputPath, JSON.stringify(data));
+    fs.writeFileSync(config.aqi.writePath, JSON.stringify(data));
 };
 
 const argv = yargs

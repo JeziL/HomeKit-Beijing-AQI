@@ -29,7 +29,7 @@ class AirQualitySensor implements AccessoryPlugin {
 
     readAQIData(userConfigPath: string) {
         const userConfig = JSON.parse(fs.readFileSync(userConfigPath, "utf8"));
-        const aqiData = JSON.parse(fs.readFileSync(userConfig.aqi.outputPath, "utf8"));
+        const aqiData = JSON.parse(fs.readFileSync(userConfig.aqi.readPath, "utf8"));
         aqiData.aqiList.forEach(d => {
             if (d.id === userConfig.aqi.primeStation) {
                 this.aqiData = new AQIData(d, aqiData.weather);

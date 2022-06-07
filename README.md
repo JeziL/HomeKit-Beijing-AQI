@@ -42,7 +42,8 @@ This project consists of two parts:
     {
         "aqi": {
             "url": "http://zx.bjmemc.com.cn/getAqiList.shtml",
-            "outputPath": "/path/to/aqi.json",
+            "writePath": "/path/to/aqi.json",
+            "readPath": "/path/to/aqi.json",
             "favStations": [
                 11,
                 85,
@@ -59,7 +60,8 @@ This project consists of two parts:
 
     ```
 
-    - `aqi.outputPath`: The program will fetch and write air quality & weather data to that file with a fixed time interval (which is configured in the next step).
+    - `aqi.writePath`: The program will fetch and write air quality & weather data to that file with a fixed time interval (which is configured in the next step).
+    - `aqi.readPath`: The program will read air quality & weather data from that file. It could differ from the `aqi.writePath` when running Homebridge in a docker container.
     - `aqi.favStations`: The program will only save the data from these specified monitor stations. The IDs of all stations are as follows (this could change in the future).
 
         | ID | Station | ID | Station | ID | Station | ID | Station | ID | Station |
