@@ -1,0 +1,23 @@
+{
+    "pluginAlias": "Air Quality Sensor",
+    "pluginType": "accessory",
+    "singular": false,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "required": true,
+                "default": "Air Quality Sensor",
+                "description": "The name that will appear in the Home App."
+            },
+            "userConfigPath": {
+                "title": "BJAQI Config Path",
+                "type": "string",
+                "required": true,
+                "description": "The path to the BJ-AQI config file."
+            }
+        }
+    }
+}

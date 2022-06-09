@@ -30,7 +30,7 @@ class AirQualitySensor implements AccessoryPlugin {
     readAQIData(userConfigPath: string) {
         const userConfig = JSON.parse(fs.readFileSync(userConfigPath, "utf8"));
         const aqiData = JSON.parse(fs.readFileSync(userConfig.aqi.readPath, "utf8"));
-        aqiData.aqiList.forEach(d => {
+        aqiData.aqiList.forEach((d: { id: any; }) => {
             if (d.id === userConfig.aqi.primeStation) {
                 this.aqiData = new AQIData(d, aqiData.weather);
             }
@@ -46,9 +46,9 @@ class AirQualitySensor implements AccessoryPlugin {
         };
     }
 
-    constructor(log: Logging, config: AccessoryConfig, api: API) {
+    constructor(log: Logging, config: AccessoryConfig, _api: API) {
         this.log = log;
-        this.name = config.name;
+        this.name = config.name || "Air Quality Sensor";
         this.aqiData = new AQIData(null, null);
 
         this.aqsService = new hap.Service.AirQualitySensor(this.name);
